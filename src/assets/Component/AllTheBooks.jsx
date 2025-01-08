@@ -6,7 +6,6 @@ import romance from '../Books/romance.json'
 import scifi from '../Books/scifi.json'
 import { Button, Card, Row, Col } from "react-bootstrap";
 
-
 class AllTheBooks extends Component{
     state = {
         books: fantasy 
@@ -15,13 +14,13 @@ class AllTheBooks extends Component{
         return(
             <>
             <div className= "d-flex gap-4 justify-content-center">
-                <button onClick={()=> this.setState({books:fantasy})}>fantasy</button>
-                <button onClick={()=> this.setState({books:history})}>history</button>
-                <button onClick={()=> this.setState({books:horror})}>horror</button>
-                <button onClick={()=> this.setState({books:romance})}>romance</button>
-                <button onClick={()=> this.setState({books:scifi})}>scifi</button>
+                <button className= "btn bg-success" onClick={()=> this.setState({books:fantasy})}>Fantasy</button>
+                <button className= "btn bg-success" onClick={()=> this.setState({books:history})}>History</button>
+                <button className= "btn bg-success" onClick={()=> this.setState({books:horror})}>Horror</button>
+                <button className= "btn bg-success" onClick={()=> this.setState({books:romance})}>Romance</button>
+                <button className= "btn bg-success" onClick={()=> this.setState({books:scifi})}>Scifi</button>
             </div>
-            <Row md={6} lg={4}>
+            <Row xs={12} md={6} lg={4}>
                 {this.state.books.map((book)=>{
                     return (
                         <Col key= {book.asin}>
@@ -35,15 +34,12 @@ class AllTheBooks extends Component{
                             </Card>
                           
                         </Col>
-
                     )
                 })
                 }
             </Row>
-
             </>
         )
-
       }
 }
 export default AllTheBooks
